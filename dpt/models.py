@@ -87,7 +87,7 @@ class DPT(BaseModel):
 
 
 class DPTDepthModel(DPT):
-    def __init__(self, path=None, non_negative=True, **kwargs):
+    def __init__(self, path=None, state_dict=None, non_negative=True, **kwargs):
         features = kwargs["features"] if "features" in kwargs else 256
 
         head = nn.Sequential(
@@ -104,6 +104,9 @@ class DPTDepthModel(DPT):
 
         if path is not None:
             self.load(path)
+
+        if state_dict is not None:
+            self.load_state_dict(state_dict)
 
     def forward(self, x):
         return super().forward(x).squeeze(dim=1)
