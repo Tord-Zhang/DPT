@@ -12,8 +12,8 @@ from dpt.transforms import Resize, NormalizeImage, PrepareForNet
 def DPT(pretrained=True, model_type="dpt_hybrid", optimize=False):
     
     default_models = {
-        "dpt_large": "weights/dpt_large-midas-2f21e586.pt",
-        "dpt_hybrid": "weights/dpt_hybrid-midas-501f0c75.pt",
+        "dpt_large": "dpt_large-midas-2f21e586.pt",
+        "dpt_hybrid": "dpt_hybrid-midas-501f0c75.pt",
     }
 
     if model_type not in default_models.keys():

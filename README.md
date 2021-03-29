@@ -57,11 +57,11 @@ Use the flag `-t` to switch between different models. Possible options are `dpt_
     import torch
     import torch.hub
     import cv2
-
-    model = torch.hub.load('Torch-Zhang/DPT', 'DPT', source='github', pretrained=True)
+https://github.com/Tord-Zhang/DPT/archive/refs/tags/torchhub.zip
+    model = torch.hub.load('Tord-Zhang/DPT', 'DPT', source='github', pretrained=True)
     model = model.cuda()
-    transform = torch.hub.load('Torch-Zhang/DPT', 'transforms', source='github')
-    img_reader = torch.hub.load('Torch-Zhang/DPT', 'read_image', source='github')
+    transform = torch.hub.load('Tord-Zhang/DPT', 'transforms', source='github')
+    img_reader = torch.hub.load('Tord-Zhang/DPT', 'read_image', source='github')
     img = img_reader("input/test.png")
     img_input = transform({"image": img})["image"]
     with torch.no_grad():
@@ -110,3 +110,5 @@ Our work builds on and uses code from [timm](https://github.com/rwightman/pytorc
 ### License 
 
 MIT License 
+
+
